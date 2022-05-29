@@ -1,0 +1,236 @@
+:root {
+  --Cyan: hsl(186, 34%, 60%);
+  --Cyan-hover: hsla(185, 45%, 66%, 0.626);
+  --Dark-brown: hsl(25, 47%, 15%);
+  --Medium-brown: hsl(28, 10%, 53%);
+  --Cream: hsl(27, 66%, 92%);
+  --Very-pale-orange: hsl(33, 100%, 98%);
+  --Soft-red: hsl(10, 79%, 65%);
+  --Soft-red-hover: hsla(10, 81%, 69%, 0.726);
+}
+* {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8rem;
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--Cream);
+}
+.attribution {
+  background-color: var(--Soft-red);
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  padding: 0.8%;
+  text-align: center;
+  font-weight: 700;
+  text-align: center;
+  color: var(--Cream);
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.516);
+}
+
+/* Start chart container */
+.container {
+  margin-top: 5%;
+  width: 40vw;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+@media screen and (max-width: 1191px) {
+  .container {
+    width: 50vw;
+  }
+}
+@media screen and (max-width: 901px) {
+  .container {
+    width: 60vw;
+  }
+}
+@media screen and (max-width: 769px) {
+  .container {
+    margin-top: 15%;
+    width: 70vw;
+  }
+}
+@media screen and (max-width: 715px) {
+  .container {
+    width: 90vw;
+  }
+}
+@media screen and (max-width: 501px) {
+  .container {
+    width: 98vw;
+  }
+}
+/* start head  */
+.head,
+.body {
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.064);
+}
+.head {
+  background-color: var(--Soft-red);
+  border-radius: 0.8em;
+  padding: 1.5em;
+  color: var(--Cream);
+  display: flex;
+  justify-content: space-between;
+}
+
+.wrap .balance {
+  font-size: 1.5rem;
+}
+.amount {
+  font-size: 2.4rem;
+  font-weight: 700;
+}
+#logo {
+  align-self: center;
+  width: fit-content;
+  height: fit-content;
+}
+
+/* start body  */
+
+.body {
+  background-color: #fff;
+  border-radius: 0.8em;
+  padding: 1.5em;
+  display: flex;
+  flex-direction: column;
+  color: var(--Dark-brown);
+}
+.body .title {
+  font-size: 3rem;
+}
+@media screen and (max-width: 386px) {
+  .body .title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 339px) {
+  .body .title {
+    font-size: 2rem;
+  }
+}
+.body .data {
+  border-top: 1px solid hsla(28, 10%, 53%, 0.446);
+  padding-top: 1em;
+}
+
+.body .month-total {
+  color: var(--Medium-brown);
+  font-size: 1.75rem;
+}
+@media screen and (max-width: 386px) {
+  .body .month-total {
+    text-align: center;
+  }
+}
+.body .wrap {
+  display: flex;
+  gap: 1em;
+  justify-content: space-between;
+}
+.body .total {
+  font-size: 4.5rem;
+  font-weight: 700;
+}
+.body .percent {
+  display: flex;
+  flex-direction: column;
+}
+.body .percent #percent {
+  align-self: flex-end;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 386px) {
+  .body .wrap {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  .body .percent #percent {
+    align-self: flex-start;
+    font-weight: 700;
+  }
+}
+.body .percent #text {
+  font-size: 1.75rem;
+  color: var(--Medium-brown);
+}
+
+/* Start charts  */
+.body .charts {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.8em 0;
+}
+
+.chart {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 0.5em;
+  height: 150px;
+  position: relative;
+}
+
+.chart .graph {
+  position: relative;
+  border-radius: 5px;
+  width: 50px;
+  height: 100%;
+  background-color: var(--Soft-red);
+  transition: 0.3s;
+}
+@media screen and (max-width: 501px) {
+  .chart .graph {
+    width: 40px;
+  }
+}
+@media screen and (max-width: 386px) {
+  .chart .graph {
+    width: 30px;
+  }
+}
+.chart .graph:hover {
+  background-color: var(--Soft-red-hover);
+  cursor: pointer;
+}
+.chart .graph .amount {
+  background-color: var(--Dark-brown);
+  border-radius: 5px;
+  color: var(--Cream);
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0.6em;
+  /* set the position  */
+  visibility: hidden;
+  position: absolute;
+  top: -60px;
+  left: 0;
+  z-index: 9;
+}
+.chart .graph:hover > .amount {
+  visibility: visible;
+  top: -40px;
+  transition: all 0.5s;
+}
+.chart .day {
+  color: var(--Medium-brown);
+}
+.chart .graph.max {
+  background-color: var(--Cyan);
+}
+.chart .graph.max:hover {
+  background-color: var(--Cyan-hover);
+}

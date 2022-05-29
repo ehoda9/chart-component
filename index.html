@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>chart component</title>
+  </head>
+  <body>
+    <main class="container">
+      <div class="head">
+        <div class="wrap">
+          <p class="balance">My balance</p>
+          <h1 class="amount">$921.48</h1>
+        </div>
+        <img src="./images/logo.svg" alt="logo" id="logo" />
+      </div>
+      <div class="body">
+        <h1 class="title">Spending - Last 7 days</h1>
+        <div class="charts">
+          <!-- Automatic fill it -->
+        </div>
+        <div class="data">
+          <div class="month-total">Total this month</div>
+          <div class="wrap">
+            <h2 class="total">$478.33</h2>
+            <div class="percent">
+              <span id="percent">+2.4%</span>
+              <span id="text">from last month</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <div class="attribution">Coded by Mahmoud M.</div>
+    <script src="./app.js"></script>
+  </body>
+</html>
